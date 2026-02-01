@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Ilme + Siam</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  background:#0b0b0b;
+  font-family: 'Segoe UI', sans-serif;
+  color:#fff;
+}
+
+.lock{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+}
+
+.lock input{
+  padding:12px;
+  border-radius:10px;
+  border:none;
+  margin-top:15px;
+  width:220px;
+  text-align:center;
+}
+
+.lock button{
+  margin-top:10px;
+  padding:10px 25px;
+  border:none;
+  border-radius:10px;
+  background:#ffd28a;
+  cursor:pointer;
+}
+
+.main{
+  display:none;
+}
+
+header{
+  text-align:center;
+  padding:40px 20px;
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap:15px;
+  padding:20px;
+}
+
+.gallery img{
+  width:100%;
+  border-radius:18px;
+  box-shadow:0 0 20px rgba(255,215,150,0.15);
+}
+
+footer{
+  text-align:center;
+  padding:30px;
+  opacity:0.6;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🔐 LOCK SCREEN -->
+<div class="lock" id="lock">
+  <h2>Private Memories 🤍</h2>
+  <input type="password" id="pass" placeholder="Enter password">
+  <button onclick="check()">Unlock</button>
+</div>
+
+<!-- 🌙 MAIN CONTENT -->
+<div class="main" id="main">
+  <header>
+    <h1>Ilme + Siam</h1>
+    <p>Some memories don’t fade — they stay.</p>
+  </header>
+
+  <div class="gallery">
+    <img src="1.jpg">
+    <img src="2.jpg">
+    <img src="3.jpg">
+  </div>
+
+  <footer>
+    Our story • quietly beautiful
+  </footer>
+</div>
+
+<script>
+function check(){
+  var p = document.getElementById("pass").value;
+  if(p === "19112025"){
+    document.getElementById("lock").style.display="none";
+    document.getElementById("main").style.display="block";
+  } else {
+    alert("Wrong password 🤍");
+  }
+}
+</script>
+
+</body>
+</html>
